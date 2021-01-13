@@ -86,6 +86,8 @@ block content
           input#p_city.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
           label State
           input#p_state.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
+          label Pincode
+          input#p_pin.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
           input.w3-input.w3-border.w3-round(type='hidden')
         div(style='margin: auto; text-align: center')
           small Book now  
@@ -103,8 +105,9 @@ block content
             var mobileNo = document.getElementById('p_mobileNo').value;
             var city = document.getElementById('p_city').value;
             var state = document.getElementById('p_state').value;
+            var pin = document.getElementById('p_pin').value;
             var plan_Name = '#{planName}'
-            var description = ` ${plan_Name} ~ ${name} ~ ${address} ~  ${city} ~ ${state} ~ ${email} `
+            var description = ` ${plan_Name} ~ ${name} ~ ${address} ~  ${city} ~ ${state} ~ ${pin} ~ ${email} `
             
             if( name != "" && address != "" && email != "" && mobileNo != "" && city != "" && state != "" &&  name != " " && address != " " && email != " " && mobileNo != " " && city != " " && state != " ")
             {

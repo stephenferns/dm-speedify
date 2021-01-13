@@ -1,0 +1,143 @@
+extends layout
+
+
+block content
+  .offer-first
+    span(style='font-size: 2em;font-weight: lighter')= greeting
+    br
+    span(style='font-size: 1.5em')= sub_1
+    br
+    span(style='font-size: 1.5em')= sub_2
+    br
+    span(style='font-size: 1.5em')= sub_3
+    br
+    br
+    span(style='line-height:1.5em;padding:5px;font-weight: medium;text-align: center; color: #87CEFA; font-weight:bold')= speed
+      b(style='color: #87CEFA')= des_1 
+      b(style='color: #87CEFA')= des_3
+        s(style='color: #87CEFA')= actual_amount
+    br
+    //- i(style='font-size: small;color: gray')= des_2
+    a(style='font-size: small; cursor: pointer;' onclick='showKnowMore()')
+      | know more
+      | &gt;
+    br
+    br
+    br
+    br
+    .introImage
+    div(style='height:8em; width: 100%; position:absolute; bottom: 0;margin-bottom: 8px; ')
+      div(style='margin: auto')
+        a.w3-btn.whatsappImage(href="https://wa.me/+917218113344" target="blank")
+    div(style='height:5em; width: 100%; position:absolute; bottom: 0; ')
+      div(style='margin: auto')
+        button.w3-btn.w3-white(onclick='bookNow()')= button_text
+  #know-more.action-div
+    .w3-card-4.w3-border.w3-round-large
+      .w3-container.w3-black
+        h2.highlight= planName
+      .w3-container Includes installation charges, ONU with WiFi Router 
+      br
+      .w3-container(style='text-align: left')
+        | Speed : 
+        span.highlight= speed
+        br
+        |  Data Cap
+        |                 : 
+        span.highlight= know_data_cap
+        br
+        |  Amount : 
+        span.highlight= des_1+des_3
+          s=actual_amount
+        br
+        //- |  Subcription Fee : 
+        //- span.highlight= know_sub 
+        //- br
+      br
+      div(style='margin: auto')
+        button.w3-btn.w3-green(onclick='bookNow()') Reconnect Now
+      br
+  #bookNow.action-div
+    .w3-card-4.w3-border.w3-round-large
+      .w3-container.w3-green
+        h2 Sign up 
+      .w3-container(style='text-align: left')
+        h4(style='text-align: center')= speed
+        small.highlight
+          | Reconnect for 
+          | #{customerName} .
+        br
+        small(style='color: lightslategray')
+          | Please dont sign up for commercial connection using this
+          | offer.
+        form#bookNowform.w3-container
+          label  Name
+          input#p_name.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
+          label Address
+          input#p_address.w3-input.w3-border.w3-round(type='textarea' required='' pattern="^\S+$")
+          label Email
+          input#p_email.w3-input.w3-border.w3-round(type='email' required='' pattern="^\S+$")
+          label Mobile No
+          input#p_mobileNo.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
+          label City
+          input#p_city.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
+          label State
+          input#p_state.w3-input.w3-border.w3-round(type='text' required='' pattern="^\S+$")
+          input.w3-input.w3-border.w3-round(type='hidden')
+        div(style='margin: auto; text-align: center')
+          small Reconnect now  
+            | and get 25% off.
+          br
+          button#rzp-button-pay.w3-btn.w3-green(onclick='placeBooking()') Reconnect now
+          script(src='https://checkout.razorpay.com/v1/checkout.js')
+      br
+    script.
+        function placeBooking(){
+            var apiKey = '76b9257c673c9e071ec36c96ad74ad8a'
+            var name = document.getElementById('p_name').value;
+            var address = document.getElementById('p_address').value;
+            var email = document.getElementById('p_email').value;
+            var mobileNo = document.getElementById('p_mobileNo').value;
+            var city = document.getElementById('p_city').value;
+            var state = document.getElementById('p_state').value;
+            var plan_Name = '#{planName}'
+            var description = ` ${plan_Name} ~ ${name} ~ ${address} ~  ${city} ~ ${state} ~ ${email} `
+            
+            if( name != "" && address != "" && email != "" && mobileNo != "" && city != "" && state != "" &&  name != " " && address != " " && email != " " && mobileNo != " " && city != " " && state != " ")
+            {
+              var requiredData = {
+                  sessionId: apiKey,
+                  values : JSON.stringify({
+                      name: name,
+                      call_type:  "Reconnect Order DM",
+                      address: address,
+                      mobile: mobileNo,
+                      username : mobileNo,
+                      description: description
+                  })
+                  
+              }   
+              var settings = {
+              "url": "https://lm.ditscentre.in/ums/serviceCall/unAuthServiceCall",
+              "method": "POST",
+              "timeout": 0,
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "data": JSON.stringify(requiredData)
+              };
+              $.ajax(settings).done(function (response) {
+                  var newResponse = JSON.parse(response);
+                  if (newResponse.state == true) {
+                      swal("Successful", "Thank you for comming back, your details have been recorded we'll contact you soon.", "success");
+                      document.getElementById('bookNowform').reset();
+                      //swal('Your details have be recorded Successfully')
+                  } else {
+                      swal("Unsuccessful", "You have entered incorrect information try again with proper details", "error")
+                  }
+
+              });
+            }else {
+                swal("Unsuccessful", "Please enter the correct details", "error");
+            }
+        }

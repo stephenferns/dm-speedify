@@ -1,0 +1,79 @@
+extends layout
+
+
+block content
+  .offer-first
+    span(style='font-size: 2em;font-weight: lighter')= title
+    br
+    span(style='font-size: 1.5em')= sub
+    br
+    span(style='line-height:1.5em;padding:5px;font-weight: medium;text-align: center')= des
+      b(style='color: #87CEFA')= des_1 
+    br
+    i(style='font-size: small;color: gray')= des_2
+    a(style='font-size: small; cursor: pointer;' onclick='showKnowMore()')
+      | know more
+      | &gt;
+    br
+    br
+    br
+    br
+    .introImage
+    div(style='height:5em; width: 100%; position:absolute; bottom: 0; ')
+      div(style='margin: auto')
+        button.w3-btn.w3-white(onclick='bookNow()')= button_t
+  #know-more.action-div
+    .w3-card-4.w3-border.w3-round-large
+      .w3-container.w3-black
+        h2.highlight  Test Plan 
+      .w3-container Includes installation charges, ONU with WiFi Router 
+      br
+      .w3-container(style='text-align: left')
+        | Speed : 
+        span.highlight= know_speed
+        br
+        |  Data Cap
+        |                 : 
+        span.highlight= know_data_cap
+        br
+        |  Data priority cap : 
+        span.highlight= know_p_cap
+        br
+        |  Subcription Fee : 
+        span.highlight= know_sub 
+        br
+      br
+      div(style='margin: auto')
+        button.w3-btn.w3-green(onclick='bookNow()')= know_button
+      br
+  #bookNow.action-div
+    .w3-card-4.w3-border.w3-round-large
+      .w3-container.w3-green
+        h2 Sign up 
+      .w3-container(style='text-align: left')
+        h4(style='text-align: center') Test Plan, Speed 1 Mbps.
+        small.highlight
+          | Reffered by
+          | with Sumit Jain .
+        br
+        small(style='color: lightslategray')
+          | Please dont sign up for commercial connection using this
+          | offer.
+        form.w3-container
+          label  Name
+          input#p_name.w3-input.w3-border.w3-round(type='text' required='')
+          label Address
+          input#p_address.w3-input.w3-border.w3-round(type='textarea' required='')
+          label Email
+          input#p_email.w3-input.w3-border.w3-round(type='email' required='')
+          input.w3-input.w3-border.w3-round(type='hidden')
+        div(style='margin: auto; text-align: center')
+          small By paying you agree to 
+          small(style='color:#87CEFA')
+            | receive offers, usage terms,
+            | privacy policy
+          br
+          button#rzp-button-pay.w3-btn.w3-green(onclick="getOrder('Test Plan Kit Referal','1','referal')") Pay
+          script(src='https://checkout.razorpay.com/v1/checkout.js')
+      br
+

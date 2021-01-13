@@ -1,0 +1,68 @@
+.offer-first {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding-top: 40px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.whatsappImage {
+  background-image: url("https://assets.mmcinternet.in/images/whatsapp.png");
+  background-size: 100% 100%;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
+.introImage {
+  background-image: url("/public/images/logo.png");
+  background-size: 100% 100%;
+  width: 200px;
+  height: 175px;
+  margin: auto;
+}
+.action-div {
+  white-space: normal;
+  position: relative;
+  top: 5%;
+  width: 95%;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: auto;
+  font-weight: medium;
+  line-height: 1.5em;
+  font-size: medium;
+  border: 1px lightgray;
+  max-width: 480px;
+  padding: 10px;
+  display: none;
+  min-height: 320px;
+}
+.highlight {
+  color: #87cefa;
+  font-weight: bolder;
+}
+@media only screen and (max-width: 700px) {
+  /* .offer-first {
+    height: 95vh;
+  } */
+  /* .spacegreeting {
+    margin-top: 100px;
+  } */
+  .introImage {
+    width: 170px;
+    height: 100px;
+  }
+  /* div {
+    bottom: 5em;
+  } */
+  /* div #space1 {
+    bottom: 5em;
+  }
+  div #space2 {
+    height: 50em;
+  } */
+}

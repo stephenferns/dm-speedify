@@ -5,12 +5,12 @@ block content
   .offer-first
     span(style='font-size: 2em;font-weight: lighter')= greeting
     br
-    span(style='font-size: 1.5em')= sub
+    span(style='font-size: 1.5em;color: #87CEFA')= sub
     br
     span(style='line-height:1.5em;padding:5px;font-weight: medium;text-align: center')= des
       b(style='color: #87CEFA')= des_1 
     br
-    //- i(style='font-size: small;color: skyblue;font-weight:bold')= des_2
+    i(style='font-size: small;color: skyblue;font-weight:bold')= des_2
     a(style='font-size: small; cursor: pointer;' onclick='showKnowMore()')
       br
       | know more
@@ -121,7 +121,7 @@ block content
                   
               }   
               var settings = {
-              "url": "https://lm.ditscentre.in/sunilums/serviceCall/unAuthServiceCall",
+              "url": "https://lm.ditscentre.in/sunilUms/serviceCall/unAuthServiceCall",
               "method": "POST",
               "timeout": 0,
               "headers": {

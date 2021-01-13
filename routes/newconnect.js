@@ -9,7 +9,7 @@ var countVisits = function (requestData) {
 
     var options = {
         'method': 'POST',
-        'url': 'https://lm.ditscentre.in/sunilums/users/countVisits',
+        'url': 'https://lm.ditscentre.in/sunilUms/users/countVisits',
         'headers': {
             'Content-Type': 'application/json'
         },
@@ -36,10 +36,10 @@ var countVisits = function (requestData) {
 var mastPlan_yearly = {
     title: 'Speedyfi',
     greeting: 'Hello !',
-    subtitle: "Mast Plan",
+    subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
     description_1: '300 Mbps at just Rs 600 for 30 days',
-    description_2: "Free Wifi Router and Installation ",
+    description_2: "Book your ispeed plan now",
     //button_text: ' Book Now Rs ',
     amt: "600",
     company_name: 'Prysmnet, avail the free offer.',
@@ -53,10 +53,10 @@ var mastPlan_yearly = {
 var mastPlan_monthly = {
     title: 'Speedyfi',
     greeting: 'Hello !',
-    subtitle: "Mast Plan",
+    subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
     description_1: '300 Mbps at just Rs 850 for 30 days',
-    description_2: "Free Wifi Router and Installation ",
+    description_2: "Book your ispeed plan now",
     //button_text: ' Book Now Rs ',
     amt: "850",
     company_name: 'Speedyfi',
@@ -70,10 +70,10 @@ var mastPlan_monthly = {
 var mastPlan_quartely = {
     title: 'Speedyfi',
     greeting: 'Hello !',
-    subtitle: "Mast Plan",
+    subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
     description_1: '300 Mbps at just Rs 2000 for 90 days',
-    description_2: "Free Wifi Router and Installation ",
+    description_2: "Book your ispeed plan now",
     //button_text: ' Book Now Rs ',
     amt: "2000",
     company_name: 'Speedyfi',
@@ -155,9 +155,9 @@ router.get('/:planName/:payNow', function (req, res, next) {
         res.render('newconnect_booknow', {
             title: mastPlan_monthly.title,
             greeting: mastPlan_monthly.greeting,
-            sub: mastPlan_monthly.sub,
+            sub: mastPlan_monthly.subtitle,
             des_1: mastPlan_monthly.description_1,
-            des_2: "2000 Rs Refundable  ",
+            des_2: mastPlan_monthly.description_2,
             button_text: "Book Now ",
             meta_og_des: mastPlan_monthly.company_name,
             speed: mastPlan_monthly.speed,
@@ -170,9 +170,9 @@ router.get('/:planName/:payNow', function (req, res, next) {
         res.render('newconnect_booknow', {
             title: mastPlan_quartely.title,
             greeting: mastPlan_quartely.greeting,
-            sub: mastPlan_quartely.sub,
+            sub: mastPlan_quartely.subtitle,
             des_1: mastPlan_quartely.description_1,
-            des_2: "2000 Rs Refundable",
+            des_2: mastPlan_quartely.description_2,
             button_text: "Book Now ",
             meta_og_des: mastPlan_quartely.company_name,
             speed: mastPlan_quartely.speed,

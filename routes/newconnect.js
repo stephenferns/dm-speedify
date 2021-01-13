@@ -46,7 +46,8 @@ var mastPlan_yearly = {
     keywords: 'broadband, broadband internet, high speed internet, super connect, mega connect, internet Bahadurgarh, 45mbps, 1gbps, bethefirst, internet connection',
     data_cap: 'Unlimited',
     speed: "300 Mbps",
-    plan_name: "300 Mbps Yearly"
+    plan_name: "300 Mbps Yearly",
+    deposit: " 2000 Rs (Refundable)"
     //subcription: 'Rs 1 inclusive of taxes. After ',
 };
 
@@ -63,7 +64,8 @@ var mastPlan_monthly = {
     keywords: 'broadband, broadband internet, high speed internet, super connect, mega connect, internet Bahadurgarh, 45mbps, 1gbps, bethefirst, internet connection',
     data_cap: 'Unlimited',
     speed: "300 Mbps",
-    plan_name: "Monthly Ispeed Plan"
+    plan_name: "Monthly Ispeed Plan",
+    deposit: " 2000 Rs (Refundable)"
     //subcription: 'Rs 1 inclusive of taxes. After ',
 };
 
@@ -80,7 +82,8 @@ var mastPlan_quartely = {
     keywords: 'broadband, broadband internet, high speed internet, super connect, mega connect, internet Bahadurgarh, 45mbps, 1gbps, bethefirst, internet connection',
     data_cap: 'Unlimited',
     speed: "300 Mbps",
-    plan_name: "Quarterly Ispeed Plan"
+    plan_name: "Quarterly Ispeed Plan",
+    deposit: " 2000 Rs (Refundable)"
 
     //subcription: 'Rs 1 inclusive of taxes. After ',
 };
@@ -164,7 +167,8 @@ router.get('/:planName/:payNow', function (req, res, next) {
             know_data_cap: mastPlan_monthly.data_cap,
             know_sub: "30 days",
             planName: mastPlan_monthly.plan_name,
-            amount: mastPlan_monthly.amt
+            amount: mastPlan_monthly.amt,
+            depo: mastPlan_monthly.deposit
         });
     } else if (planName == "ispeed3M" && payNow == 'b') {
         res.render('newconnect_booknow', {
@@ -179,7 +183,8 @@ router.get('/:planName/:payNow', function (req, res, next) {
             know_data_cap: mastPlan_quartely.data_cap,
             know_sub: "90 days",
             planName: mastPlan_quartely.plan_name,
-            amount: mastPlan_quartely.amt
+            amount: mastPlan_quartely.amt,
+            depo: mastPlan_quartely.deposit
         });
     }
 

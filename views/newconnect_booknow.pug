@@ -98,18 +98,18 @@ block content
       br
     script.
         function placeBooking(){
-            var apiKey = '76b9257c673c9e071ec36c96ad74ad8a'
+            var apiKey = '61ac05eda12f7bd8a45400396c165643'
             var name = document.getElementById('p_name').value;
             var address = document.getElementById('p_address').value;
             var email = document.getElementById('p_email').value;
             var mobileNo = document.getElementById('p_mobileNo').value;
             var city = document.getElementById('p_city').value;
             var state = document.getElementById('p_state').value;
-            var pin = document.getElementById('p_pin').value;
+            var pincode = document.getElementById('p_pin').value;
             var plan_Name = '#{planName}'
-            var description = ` ${plan_Name} ~ ${name} ~ ${address} ~  ${city} ~ ${state} ~ ${pin} ~ ${email} `
+            var description = ` ${plan_Name} ~ ${name} ~ ${address} ~  ${city} ~ ${state} ~ ${pincode} ~ ${email} `
             
-            if( name != "" && address != "" && email != "" && mobileNo != "" && city != "" && state != "" &&  name != " " && address != " " && email != " " && mobileNo != " " && city != " " && state != " ")
+            if( name != "" && address != "" && email != "" && mobileNo != "" && city != "" && state != "" && pincode!="" &&  name != " " && address != " " && email != " " && mobileNo != " " && city != " " && state != " " && pincode!=" ")
             {
               var requiredData = {
                   sessionId: apiKey,
@@ -133,6 +133,7 @@ block content
               "data": JSON.stringify(requiredData)
               };
               $.ajax(settings).done(function (response) {
+                  //- console.log(response)
                   var newResponse = JSON.parse(response);
                   if (newResponse.state == true) {
                       swal("Successful", "Thank you for booking. For more details visit us at www.mmcinternet.in.", "success");
@@ -148,19 +149,19 @@ block content
             }
         }
     // Global site tag (gtag.js) - Google Analytics
-    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-185804429-2')
-    script.
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-185804429-2');
+    //- script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-185804429-2')
+    //- script.
+    //-     window.dataLayer = window.dataLayer || [];
+    //-     function gtag(){dataLayer.push(arguments);}
+    //-     gtag('js', new Date());
+    //-     gtag('config', 'UA-185804429-2');
 
-    // Global site tag (gtag.js) - Google Analytics
-    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-185806097-1')
-    script.
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-185806097-1');
+    //- // Global site tag (gtag.js) - Google Analytics
+    //- script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-185806097-1')
+    //- script.
+    //-     window.dataLayer = window.dataLayer || [];
+    //-     function gtag(){dataLayer.push(arguments);}
+    //-     gtag('js', new Date());
+    //-     gtag('config', 'UA-185806097-1');
 
 

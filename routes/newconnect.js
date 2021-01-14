@@ -9,7 +9,7 @@ var countVisits = function (requestData) {
 
     var options = {
         'method': 'POST',
-        'url': 'https://lm.ditscentre.in/sunilUms/users/countVisits',
+        'url': 'https://lm.ditscentre.in/umssunil/users/countVisits',
         'headers': {
             'Content-Type': 'application/json'
         },

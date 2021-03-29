@@ -33,7 +33,7 @@ var countVisits = function (requestData) {
 
 var mastPlan = {
     title: 'Speedyfi',
-    greeting: `"maha dhamaka internet offer"`,
+    greeting: `"Maha Dhamaka Internet Offer"`,
     subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
     description_1: '300 Mbps at just Rs 6500 for 365 days',

@@ -31,7 +31,23 @@ var countVisits = function (requestData) {
 
 
 
-
+var mastPlan = {
+    title: 'Speedyfi',
+    greeting: `"maha dhamaka internet offer"`,
+    subtitle: "Welocme to Speedyfi Internet",
+    //description: '300 Mbps',
+    description_1: '300 Mbps at just Rs 6500 for 365 days',
+    description_2: "Book your ispeed plan now",
+    //button_text: ' Book Now Rs ',
+    amt: "6500",
+    company_name: 'Speedyfi, avail the free offer.',
+    keywords: 'broadband, broadband internet, high speed internet, super connect, mega connect, internet Bahadurgarh, 45mbps, 1gbps, bethefirst, internet connection',
+    data_cap: 'Unlimited',
+    speed: "300 Mbps",
+    plan_name: "Mast Plan Yearly",
+    deposit: " Zero security amount"
+    //subcription: 'Rs 1 inclusive of taxes. After ',
+};
 
 var mastPlan_yearly = {
     title: 'Speedyfi',
@@ -42,7 +58,7 @@ var mastPlan_yearly = {
     description_2: "Book your ispeed plan now",
     //button_text: ' Book Now Rs ',
     amt: "600",
-    company_name: 'Prysmnet, avail the free offer.',
+    company_name: 'Speedyfi, avail the free offer.',
     keywords: 'broadband, broadband internet, high speed internet, super connect, mega connect, internet Bahadurgarh, 45mbps, 1gbps, bethefirst, internet connection',
     data_cap: 'Unlimited',
     speed: "300 Mbps",
@@ -187,6 +203,23 @@ router.get('/:planName/:payNow', function (req, res, next) {
             depo: mastPlan_quartely.deposit
         });
     }
+    else if (planName == "mastplanYearly" && payNow == 'b') {
+        res.render('newconnect_booknow', {
+            title: mastPlan.title,
+            greeting: mastPlan.greeting,
+            sub: mastPlan.sub,
+            des_1: mastPlan.description_1,
+            des_2: "Free activation, Free wifi Router And Installation ",
+            button_text: "Book Now",
+            meta_og_des: mastPlan.company_name,
+            speed: mastPlan.speed,
+            know_data_cap: mastPlan.data_cap,
+            know_sub: "365 days",
+            planName: mastPlan.plan_name,
+            amount: mastPlan.amt,
+            depo: mastPlan.deposit
+        });
+    }
 
 
     var reqObject = {
@@ -212,7 +245,7 @@ router.get('/:planName/:payNow', function (req, res, next) {
 
 //     if (planName == "mastplan") {
 //         res.render('newconnect', {
-//             title: mastPlan_yearly.title,
+//             title: mastPlan.title,
 //             greeting: mastPlan_yearly.greeting,
 //             sub: mastPlan_yearly.sub,
 //             des_1: mastPlan_yearly.description_1,

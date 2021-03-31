@@ -32,7 +32,7 @@ var countVisits = function (requestData) {
 
 
 var mastPlan = {
-    title: 'Speedyfi',
+    title: 'Speedyfi Internet',
     greeting: `"Maha Dhamaka Internet Offer"`,
     subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
@@ -50,7 +50,7 @@ var mastPlan = {
 };
 
 var mastPlan_yearly = {
-    title: 'Speedyfi',
+    title: 'Speedyfi Internet',
     greeting: 'Hello !',
     subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
@@ -68,7 +68,7 @@ var mastPlan_yearly = {
 };
 
 var mastPlan_monthly = {
-    title: 'Speedyfi',
+    title: 'Speedyfi Internet',
     greeting: 'Hello !',
     subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
@@ -86,7 +86,7 @@ var mastPlan_monthly = {
 };
 
 var mastPlan_quartely = {
-    title: 'Speedyfi',
+    title: 'Speedyfi Internet',
     greeting: 'Hello !',
     subtitle: "Welocme to Speedyfi Internet",
     //description: '300 Mbps',
